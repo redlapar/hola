@@ -5,8 +5,8 @@ class MyTest(unittest.TestCase):
         lines = hola.readFile("sample.csv")
         self.assertEqual(2, len(lines))
 
-    def testGetIdFromLine(self):
-        id = hola.getIdFromLine("56997446800|1|2|3|4")
+    def testGetIdFromSampleLine(self):
+        id = hola.getIdFromSampleLine("56997446800|1|2|3|4")
         self.assertEqual("56997446800", id)
 
     def testFiltraSampleDeSCL(self):
@@ -14,3 +14,7 @@ class MyTest(unittest.TestCase):
         expected = "56997446800,7315290-9,quiero este campo"
         actual = lines[0]
         self.assertEqual(expected, actual)
+
+    def testGetIdFromSCLLine(self):
+        id = hola.getIdFromSCLLine("9,828,AAA,7103277-8,56989089032")
+        self.assertEqual("56989089032", id)
