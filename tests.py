@@ -8,3 +8,9 @@ class MyTest(unittest.TestCase):
     def testGetIdFromLine(self):
         id = hola.getIdFromLine("56997446800|1|2|3|4")
         self.assertEqual("56997446800", id)
+
+    def testFiltraSampleDeSCL(self):
+        lines = hola.filtrarDosArchivos("sample.csv", "scl.csv")
+        expected = "56997446800,7315290-9,quiero este campo"
+        actual = lines[0]
+        self.assertEqual(expected, actual)
