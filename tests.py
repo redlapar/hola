@@ -2,6 +2,7 @@ import unittest
 import hola
 import os
 #test
+# segunda linea de test, para probar si se refleja en el github
 class MyTest(unittest.TestCase):
     def testReadFileCount(self):
         lines = hola.readFile("sample.csv")
